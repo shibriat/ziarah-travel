@@ -1,14 +1,22 @@
+"use client";
+
+import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
-import { Bell, Home as HomeIcon, Users, Settings } from 'lucide-react';
+import { Bell, Home as HomeIcon, Users, Settings, PanelLeft } from 'lucide-react';
 
 export default function Home() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <header className="h-16 bg-gradient-to-r from-[#03B289] to-[#029a7a] flex items-center justify-between px-6 text-white">
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
+          <Button variant="ghost" size="icon" onClick={() => setIsCollapsed(!isCollapsed)}>
+            <PanelLeft size={20} className="text-white" />
+          </Button>
           <h1 className="text-2xl font-bold">Admin Panel</h1>
         </div>
         <div className="flex items-center gap-4">
@@ -19,12 +27,27 @@ export default function Home() {
         </div>
       </header>
       <div className="flex" style={{height: 'calc(100vh - 4rem)'}}>
-        <aside className="w-64 bg-white dark:bg-gray-800 flex flex-col">
+        <aside className={`bg-gradient-to-b from-[#C0F2D0] to-[#a0e0b0] flex flex-col transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-64'}`}>
           <nav className="flex-1 p-4">
             <ul>
-              <li><a href="#" className="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700"><HomeIcon size={20} /> Dashboard</a></li>
-              <li><a href="#" className="flex items-center gap-2 py-2 px-4 rounded bg-gray-200 dark:bg-gray-700"><Users size={20} /> Users</a></li>
-              <li><a href="#" className="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700"><Settings size={20} /> Settings</a></li>
+              <li>
+                <a href="#" className="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
+                  <HomeIcon size={20} />
+                  {!isCollapsed && <span>Dashboard</span>}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="flex items-center gap-2 py-2 px-4 rounded bg-gray-200 dark:hover:bg-gray-700">
+                  <Users size={20} />
+                  {!isCollapsed && <span>Users</span>}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
+                  <Settings size={20} />
+                  {!isCollapsed && <span>Settings</span>}
+                </a>
+              </li>
             </ul>
           </nav>
         </aside>
