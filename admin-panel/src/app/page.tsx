@@ -2,7 +2,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
-import { Bell, Home, Users, Settings } from 'lucide-react';
+import { Bell, Home as HomeIcon, Users, Settings } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
         </div>
         <nav className="flex-1 p-4">
           <ul>
-            <li><a href="#" className="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700"><Home size={20} /> Dashboard</a></li>
+            <li><a href="#" className="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700"><HomeIcon size={20} /> Dashboard</a></li>
             <li><a href="#" className="flex items-center gap-2 py-2 px-4 rounded bg-gray-200 dark:bg-gray-700"><Users size={20} /> Users</a></li>
             <li><a href="#" className="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700"><Settings size={20} /> Settings</a></li>
           </ul>
