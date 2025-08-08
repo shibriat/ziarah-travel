@@ -41,7 +41,7 @@ export default function AdminLayout({
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <header className="h-16 bg-gradient-to-r from-[#03B289]/80 to-[#029a7a]/80 backdrop-blur-lg border-b border-white/20 shadow-lg flex items-center justify-between px-6 text-white">
         <div className="flex items-center gap-4">
           {/* Desktop Collapse Button */}
@@ -68,7 +68,7 @@ export default function AdminLayout({
         {/* Sidebar */}
         <aside
           className={`
-            bg-gradient-to-b from-[#C0F2D0]/80 to-[#a0e0b0]/80 backdrop-blur-lg border-r border-white/20 shadow-lg
+            bg-green-900/30 backdrop-blur-lg border-r border-white/10 shadow-lg
             flex flex-col transition-all duration-300
             md:relative absolute z-10
             ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
