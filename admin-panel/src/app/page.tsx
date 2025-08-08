@@ -11,8 +11,8 @@ export default function Home() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className="min-h-screen">
-      <header className="h-16 bg-white/10 backdrop-blur-lg border-b border-white/20 shadow-lg flex items-center justify-between px-6 text-white">
+    <div className="min-h-screen bg-background">
+      <header className="h-16 bg-gradient-to-r from-[#03B289]/50 to-[#029a7a]/50 backdrop-blur-lg border-b border-white/20 shadow-lg flex items-center justify-between px-6 text-white">
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" onClick={() => setIsCollapsed(!isCollapsed)}>
             <PanelLeft size={20} className="text-white" />
@@ -27,7 +27,7 @@ export default function Home() {
         </div>
       </header>
       <div className="flex" style={{height: 'calc(100vh - 4rem)'}}>
-        <aside className={`bg-white/10 backdrop-blur-lg border-r border-white/20 shadow-lg flex flex-col transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-64'}`}>
+        <aside className={`bg-gradient-to-b from-[#C0F2D0]/50 to-[#a0e0b0]/50 backdrop-blur-lg border-r border-white/20 shadow-lg flex flex-col transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-64'}`}>
           <nav className="flex-1 p-4">
             <ul>
               <li>
