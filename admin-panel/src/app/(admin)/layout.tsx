@@ -82,14 +82,14 @@ export default function AdminLayout({
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-2 py-2 px-4 rounded ${
+                    className={`flex items-center gap-2 py-3 px-4 rounded ${
                       pathname === item.href
                         ? 'bg-gray-200/50 dark:bg-gray-700/50'
                         : 'hover:bg-gray-200/50 dark:hover:bg-gray-700/50'
                     }`}
                   >
                     {item.icon}
-                    {!isCollapsed && <span>{item.label}</span>}
+                    {!isCollapsed && <span className="text-sm">{item.label}</span>}
                   </Link>
                 </li>
               ))}
